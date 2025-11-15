@@ -4,7 +4,7 @@
   classes = {};
   objectVersion = 60;
   objects = {
-    /* Files */
+    /* File references */
     A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
     A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
     A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
@@ -15,26 +15,27 @@
     /* Groups */
     G1 = { isa = PBXGroup; children = (A5,A4,A1,A2,A3,A6); sourceTree = "<group>"; };
 
-    /* Build files and phases */
+    /* Build files */
     F1 = { isa = PBXBuildFile; fileRef = A1; };
     F2 = { isa = PBXBuildFile; fileRef = A2; };
     F3 = { isa = PBXBuildFile; fileRef = A3; };
 
-    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); buildActionMask = 2147483647; };
-    P2 = { isa = PBXFrameworksBuildPhase; files = (); buildActionMask = 2147483647; };
-    P3 = { isa = PBXResourcesBuildPhase; files = (); buildActionMask = 2147483647; };
+    /* Build phases */
+    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); };
+    P2 = { isa = PBXFrameworksBuildPhase; files = (); };
+    P3 = { isa = PBXResourcesBuildPhase; files = (); };
 
     /* Target */
     T1 = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (P1,P2,P3); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
 
-    /* Configs */
+    /* Configurations */
     C1 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; }; };
     C2 = { isa = XCBuildConfiguration; name = Release; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; }; };
 
     400 = { isa = XCConfigurationList; buildConfigurations = (C1,C2); defaultConfigurationName = Release; };
 
     /* Project */
-    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; developmentRegion = en; projectDirPath = ""; projectRoot = ""; };
+    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; };
   };
   rootObject = 500;
 }
