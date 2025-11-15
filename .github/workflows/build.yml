@@ -1,0 +1,48 @@
+name: Build iOS IPA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode.app
+
+    - name: Install Certificates (Dummy)
+      run: |
+        echo "Skipping certificates because we are using automatic signing"
+
+    - name: Build .app
+      run: |
+        echo "📦 Building app..."
+        xcodebuild \
+          -scheme Severance \
+          -configuration Release \
+          -sdk iphoneos \
+          -archivePath build/Severance.xcarchive \
+          clean archive \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGN_STYLE=Automatic \
+          DEVELOPMENT_TEAM="" \
+          PROVISIONING_PROFILE_SPECIFIER=""
+
+    - name: Export IPA
+      run: |
+        echo "📤 Exporting IPA..."
+        xcodebuild -exportArchive \
+          -archivePath build/Severance.xcarchive \
+          -exportPath build/output \
+          -exportOptionsPlist ExportOptions.plist
+
+    - name: Upload IPA Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Severance-IPA
+        path: build/output/*.ipa
+        
