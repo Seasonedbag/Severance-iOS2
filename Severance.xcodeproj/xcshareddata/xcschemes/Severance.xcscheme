@@ -1,76 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scheme
-   LastUpgradeVersion = "1600"
-   version = "1.7">
-   <BuildAction
-      parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TARGET"
-               BuildableName = "Severance.app"
-               BlueprintName = "Severance"
-               ReferencedContainer = "container:Severance.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
-   </BuildAction>
+<Scheme LastUpgradeVersion="1600" version="1.7">
+  <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+    <BuildActionEntries>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
+        <BuildableReference
+          BuildableIdentifier="primary"
+          BlueprintIdentifier="TARGET_GUID_ABCDEF"
+          BuildableName="Severance.app"
+          BlueprintName="Severance"
+          ReferencedContainer="container:Severance.xcodeproj">
+        </BuildableReference>
+      </BuildActionEntry>
+    </BuildActionEntries>
+  </BuildAction>
 
-   <ArchiveAction
-      buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
-   </ArchiveAction>
+  <TestAction buildConfiguration="Release" shouldUseLaunchSchemeArgsEnv="YES">
+    <Testables>
+      <TestableReference skipped="YES">
+        <BuildableReference
+          BuildableIdentifier="primary"
+          BlueprintIdentifier="TARGET_GUID_ABCDEF"
+          BuildableName="Severance.app"
+          BlueprintName="SeveranceTests"
+          ReferencedContainer="container:Severance.xcodeproj">
+        </BuildableReference>
+      </TestableReference>
+    </Testables>
+  </TestAction>
 
-   <TestAction
-      buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-   </TestAction>
+  <LaunchAction
+    buildConfiguration="Release"
+    selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.PosixSpawn"
+    launchStyle="0"
+    useCustomWorkingDirectory="NO"
+    debugDocumentVersioning="YES"
+    allowLocationSimulation="YES">
 
-   <LaunchAction
-      buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
-      ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TARGET"
-            BuildableName = "Severance.app"
-            BlueprintName = "Severance"
-            ReferencedContainer = "container:Severance.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-   </LaunchAction>
+    <BuildableProductRunnable>
+      <BuildableReference
+        BuildableIdentifier="primary"
+        BlueprintIdentifier="TARGET_GUID_ABCDEF"
+        BuildableName="Severance.app"
+        BlueprintName="Severance"
+        ReferencedContainer="container:Severance.xcodeproj">
+      </BuildableReference>
+    </BuildableProductRunnable>
 
-   <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TARGET"
-            BuildableName = "Severance.app"
-            BlueprintName = "Severance"
-            ReferencedContainer = "container:Severance.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-   </ProfileAction>
+  </LaunchAction>
 
-   <AnalyzeAction
-      buildConfiguration = "Debug">
-   </AnalyzeAction>
+  <ProfileAction buildConfiguration="Release" shouldUseLaunchSchemeArgsEnv="YES">
+    <BuildableProductRunnable>
+      <BuildableReference
+        BuildableIdentifier="primary"
+        BlueprintIdentifier="TARGET_GUID_ABCDEF"
+        BuildableName="Severance.app"
+        BlueprintName="Severance"
+        ReferencedContainer="container:Severance.xcodeproj">
+      </BuildableReference>
+    </BuildableProductRunnable>
+  </ProfileAction>
 
+  <AnalyzeAction buildConfiguration="Release" />
+  <ArchiveAction buildConfiguration="Release" revealArchiveInOrganizer="NO" />
 </Scheme>
