@@ -24,34 +24,45 @@ jobs:
                      -archivePath build/Severance.xcarchive \
                      archive \
                      CODE_SIGNING_ALLOWED=NO \
-                     CODE_SIGNING_REQUIRED=NO \
-                     CODE_SIGN_IDENTITY="" \
-                     DEVELOPMENT_TEAM="" \
-                     PROVISIONING_PROFILE_SPECIFIER="" \
                      CODE_SIGN_STYLE=Manual
 
-      - name: Verify archive contents
+      - name: Show archive contents
         run: |
           echo "📂 Archive structure:"
-          ls -R build/Severance.xcarchive || true
+          ls -R build/Severance.xcarchive
 
-      - name: Export IPA
+      - name: Package unsigned IPA manually
         run: |
-          echo "📦 Exporting IPA..."
+          echo "📦 Packaging unsigned IPA..."
           mkdir -p build/export
-          xcodebuild -exportArchive \
-                     -archivePath build/Severance.xcarchive \
-                     -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export \
-                     CODE_SIGNING_ALLOWED=NO || true
 
-      - name: List export output
+          APP_PATH=$(ls build/Severance.xcarchive/Products/Applications | grep "\.app$" | head -n 1)
+
+          if [ -z "$APP_PATH" ]; then
+            echo "❌ ERROR: No .app found in xcarchive!"
+            ls -R build/Severance.xcarchive
+            exit 1
+          fi
+
+          echo "Found app: $APP_PATH"
+
+          mkdir -p build/export/Payload
+          cp -R "build/Severance.xcarchive/Products/Applications/${APP_PATH}" build/export/Payload/
+
+          pushd build/export >/dev/null
+          zip -r Severance.unsigned.zip Payload >/dev/null
+          mv Severance.unsigned.zip Severance.unsigned.ipa
+          popd >/dev/null
+
+          echo "🎉 IPA created at build/export/Severance.unsigned.ipa"
+
+      - name: List export contents
         run: |
           echo "📂 Export directory:"
-          ls -R build/export || true
+          ls -R build/export
 
-      - name: Upload IPA artifact
+      - name: Upload unsigned IPA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: severance-ipa
-          path: build/export/*.ipa
+          name: severance-unsigned-ipa
+          path: build/export/Severance.unsigned.ipa
