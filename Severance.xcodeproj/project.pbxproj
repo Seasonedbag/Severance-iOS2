@@ -4,42 +4,62 @@
   classes = {};
   objectVersion = 52;
   objects = {
+/* Begin PBXBuildFile section */
+    200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100; };
+    201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101; };
+    202 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-    100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-    101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-    102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
-    103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
-    104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-    105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
-    106 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = www; sourceTree = "<group>"; };
+    100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
+    101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
+    102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
+    103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+    104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = "file.storyboard"; name = "LaunchScreen.storyboard"; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
+    105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+    106 /* www */ = {isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-    1 /* Main Group */ = { isa = PBXGroup; children = (105,103,104,100,101,102,106); sourceTree = "<group>"; };
+    1 /* MainGroup */ = {isa = PBXGroup; children = (105,103,104,100,101,102,106); sourceTree = "<group>"; };
 /* End PBXGroup section */
 
 /* Begin PBXSourcesBuildPhase section */
-    10 /* Sources */ = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (200,201,202); };
+    10 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (200,201,202); };
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXBuildFile section */
-    200 = { isa = PBXBuildFile; fileRef = 100; };
-    201 = { isa = PBXBuildFile; fileRef = 101; };
-    202 = { isa = PBXBuildFile; fileRef = 102; };
-/* End PBXBuildFile section */
+/* Begin PBXFrameworksBuildPhase section */
+    20 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+    30 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); };
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-    300 /* Severance */ = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (10,); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
+    300 /* Severance */ = {isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (10,20,30); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
 /* End PBXNativeTarget section */
 
 /* Begin XCBuildConfiguration section */
-    401 = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_com.kevin.SeveranceENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; };
+    401 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_com.kevin.SeveranceENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; name = Release; };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-    400 = { isa = XCConfigurationList; buildConfigurations = (401,); defaultConfigurationName = Release; };
+    400 /* Build configuration list for PBXNativeTarget "Severance" */ = {isa = XCConfigurationList; buildConfigurations = (401,); defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+
+/* Begin PBXProject section */
+    500 /* Project object */ = {isa = PBXProject; attributes = { LastUpgradeCheck = 1640; }; buildConfigurationList = 600; compatibilityVersion = "Xcode 16.0"; mainGroup = 1; developmentRegion = en; hasScannedForEncodings = 0; projectDirPath = ""; projectRoot = ""; };
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section (project) */
+    601 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section (project) */
+    600 /* Build configuration list for PBXProject */ = {isa = XCConfigurationList; buildConfigurations = (601,); defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 
   };
-  rootObject = 1;
+  rootObject = 500;
 }
