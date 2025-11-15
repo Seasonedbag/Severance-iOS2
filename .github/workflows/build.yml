@@ -14,7 +14,7 @@ jobs:
       - name: Clean DerivedData
         run: rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Build Severance.app (Archive)
+      - name: Build Severance app (archive only)
         run: |
           echo "📦 Building app..."
           xcodebuild -project Severance.xcodeproj \
@@ -24,28 +24,29 @@ jobs:
                      -archivePath build/Severance.xcarchive \
                      archive \
                      CODE_SIGNING_ALLOWED=NO \
-                     CODE_SIGN_STYLE=Manual \
-                     CODE_SIGN_IDENTITY="" \
-                     PROVISIONING_PROFILE_SPECIFIER=""
+                     CODE_SIGN_STYLE=Manual
+
+      - name: Verify archive contents
+        run: |
+          echo "📂 Archive structure:"
+          ls -R build/Severance.xcarchive
 
       - name: Export IPA
         run: |
           echo "📦 Exporting IPA..."
+          mkdir -p build/export
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export \
-                     CODE_SIGNING_ALLOWED=NO || true
+                     -exportPath build/export
 
-      - name: Upload Archive (.xcarchive)
-        uses: actions/upload-artifact@v4
-        with:
-          name: severance-xcarchive
-          path: build/Severance.xcarchive
+      - name: List export output
+        run: |
+          echo "📂 Export directory:"
+          ls -R build/export
 
-      - name: Upload IPA (if exists)
+      - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: severance-ipa
-          path: build/export
-          if-no-files-found: warn
+          path: build/export/*.ipa
