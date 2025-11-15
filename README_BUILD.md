@@ -1,1 +1,1 @@
-Severance Xcode 16 final project. Upload all files/folders in this package to your repo root.
+Severance-iOS2-FINAL generated package. Upload all files and folders to repo root. Build workflow included.

@@ -21,9 +21,9 @@
     F3 = { isa = PBXBuildFile; fileRef = A3; };
 
     /* Build phases */
-    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); };
-    P2 = { isa = PBXFrameworksBuildPhase; files = (); };
-    P3 = { isa = PBXResourcesBuildPhase; files = (); };
+    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); buildActionMask = 2147483647; runOnlyForDeploymentPostprocessing = 0; };
+    P2 = { isa = PBXFrameworksBuildPhase; files = (); buildActionMask = 2147483647; runOnlyForDeploymentPostprocessing = 0; };
+    P3 = { isa = PBXResourcesBuildPhase; files = (); buildActionMask = 2147483647; runOnlyForDeploymentPostprocessing = 0; };
 
     /* Target */
     T1 = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (P1,P2,P3); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
@@ -35,7 +35,8 @@
     400 = { isa = XCConfigurationList; buildConfigurations = (C1,C2); defaultConfigurationName = Release; };
 
     /* Project */
-    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; };
+    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; developmentRegion = en; projectDirPath = ""; projectRoot = ""; };
+
   };
   rootObject = 500;
 }
