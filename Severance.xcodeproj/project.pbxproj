@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+ // !$*UTF8*$!
 {
   archiveVersion = 1;
   classes = {};
@@ -6,139 +6,69 @@
 
   objects = {
 
-/* ====================================================================== */
-/* FILE REFERENCES */
-/* ====================================================================== */
+/* ========================= FILE REFERENCES =========================== */
 
-    A1 /* AppDelegate.swift */ = {
+    A1 /* AppDelegate.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; };
+    A2 /* SceneDelegate.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; };
+    A3 /* ViewController.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; };
+    A4 /* Info.plist */ = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; };
+    A5 /* Assets.xcassets */ = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; };
+    A6 /* www */ = { isa = PBXFileReference; lastKnownFileType = folder; path = www; };
+
+    PRODUCT /* Severance.app */ = {
       isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = AppDelegate.swift;
-      sourceTree = "<group>";
+      explicitFileType = wrapper.application;
+      path = Severance.app;
+      sourceTree = BUILT_PRODUCTS_DIR;
     };
 
-    A2 /* SceneDelegate.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = SceneDelegate.swift;
-      sourceTree = "<group>";
-    };
+/* ============================== GROUPS =============================== */
 
-    A3 /* ViewController.swift */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = sourcecode.swift;
-      path = ViewController.swift;
-      sourceTree = "<group>";
-    };
+    G1 = { isa = PBXGroup; children = (A1,A2,A3,A4,A5,A6,PRODUCT); sourceTree = "<group>"; };
 
-    A4 /* Info.plist */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = text.plist.xml;
-      path = Info.plist;
-      sourceTree = "<group>";
-    };
-
-    A5 /* Assets.xcassets */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = folder.assetcatalog;
-      path = Assets.xcassets;
-      sourceTree = "<group>";
-    };
-
-    A6 /* www */ = {
-      isa = PBXFileReference;
-      lastKnownFileType = folder;
-      path = www;
-      sourceTree = "<group>";
-    };
-
-/* ====================================================================== */
-/* GROUPS */
-/* ====================================================================== */
-
-    G1 = {
-      isa = PBXGroup;
-      children = (A1, A2, A3, A4, A5, A6);
-      sourceTree = "<group>";
-    };
-
-/* ====================================================================== */
-/* BUILD FILES */
-/* ====================================================================== */
+/* ========================== BUILD PHASES ============================ */
 
     B1 = { isa = PBXBuildFile; fileRef = A1; };
     B2 = { isa = PBXBuildFile; fileRef = A2; };
     B3 = { isa = PBXBuildFile; fileRef = A3; };
     B4 = { isa = PBXBuildFile; fileRef = A5; };
     B5 = { isa = PBXBuildFile; fileRef = A6; };
-    B6 = { isa = PBXBuildFile; fileRef = A4; };
 
-/* ====================================================================== */
-/* BUILD PHASES */
-/* ====================================================================== */
+    SourcesPhase = { isa = PBXSourcesBuildPhase; files = (B1,B2,B3); };
+    FrameworkPhase = { isa = PBXFrameworksBuildPhase; files = (); };
+    ResourcesPhase = { isa = PBXResourcesBuildPhase; files = (B4,B5); };
 
-    P1 /* Sources */ = {
-      isa = PBXSourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (B1, B2, B3);
-      runOnlyForDeploymentPostprocessing = 0;
-    };
 
-    P2 /* Frameworks */ = {
-      isa = PBXFrameworksBuildPhase;
-      buildActionMask = 2147483647;
-      files = ();
-      runOnlyForDeploymentPostprocessing = 0;
-    };
+/* ========================== TARGET (T1) ============================== */
 
-    P3 /* Resources */ = {
-      isa = PBXResourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (B4, B5, B6);
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-
-/* ====================================================================== */
-/* TARGET (T1) */
-/* ====================================================================== */
-
-    T1 /* Severance */ = {
+    T1 = {
       isa = PBXNativeTarget;
       name = Severance;
       productName = Severance;
+      productReference = PRODUCT;
       productType = "com.apple.product-type.application";
+
+      buildPhases = (SourcesPhase,FrameworkPhase,ResourcesPhase);
       buildConfigurationList = CList;
-      buildPhases = (P1, P2, P3);
-      buildRules = ();
       dependencies = ();
     };
 
-/* ====================================================================== */
-/* PROJECT */
-/* ====================================================================== */
+/* ============================ PROJECT ================================ */
 
     PROJ = {
       isa = PBXProject;
-      attributes = {
-        BuildIndependentTargetsInParallel = YES;
-        LastUpgradeCheck = 1600;
-        TargetAttributes = {
-          T1 = { CreatedOnToolsVersion = "16.0"; };
-        };
-      };
+      mainGroup = G1;
+      developmentRegion = en;
       buildConfigurationList = CList;
       compatibilityVersion = "Xcode 14.0";
-      developmentRegion = en;
-      hasScannedForEncodings = 0;
-      mainGroup = G1;
-      projectDirPath = "";
-      projectRoot = "";
+      attributes = {
+        LastUpgradeCheck = 1600;
+        TargetAttributes = { T1 = { CreatedOnToolsVersion = "16.0"; }; };
+      };
       targets = (T1);
     };
 
-/* ====================================================================== */
-/* BUILD CONFIGURATIONS */
-/* ====================================================================== */
+/* ===================== BUILD CONFIGURATIONS ========================== */
 
     DebugConfig = {
       isa = XCBuildConfiguration;
@@ -146,10 +76,9 @@
       buildSettings = {
         SWIFT_VERSION = 5.0;
         PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance";
-        IPHONEOS_DEPLOYMENT_TARGET = "15.0";
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
         INFOPLIST_FILE = Info.plist;
         CODE_SIGN_STYLE = Automatic;
-        ENABLE_BITCODE = NO;
       };
     };
 
@@ -159,17 +88,15 @@
       buildSettings = {
         SWIFT_VERSION = 5.0;
         PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance";
-        IPHONEOS_DEPLOYMENT_TARGET = "15.0";
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
         INFOPLIST_FILE = Info.plist;
         CODE_SIGN_STYLE = Automatic;
-        ENABLE_BITCODE = NO;
       };
     };
 
     CList = {
       isa = XCConfigurationList;
-      buildConfigurations = (DebugConfig, ReleaseConfig);
-      defaultConfigurationIsVisible = 0;
+      buildConfigurations = (DebugConfig,ReleaseConfig);
       defaultConfigurationName = Release;
     };
 
