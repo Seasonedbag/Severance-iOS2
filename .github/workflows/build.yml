@@ -12,11 +12,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clean DerivedData
-        run: |
-          echo "🧹 Cleaning Xcode DerivedData"
-          rm -rf ~/Library/Developer/Xcode/DerivedData/*
+        run: rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Build Severance app (Archive)
+      - name: Build Severance app (archive only)
         run: |
           echo "📦 Building app..."
           xcodebuild -project Severance.xcodeproj \
@@ -26,17 +24,15 @@ jobs:
                      -archivePath build/Severance.xcarchive \
                      archive \
                      CODE_SIGNING_ALLOWED=NO \
-                     CODE_SIGN_STYLE=Automatic \
-                     DEVELOPMENT_TEAM= \
-                     PROVISIONING_PROFILE_SPECIFIER=
+                     CODE_SIGN_STYLE=Manual
 
       - name: Export .ipa
         run: |
-          echo "📤 Exporting IPA..."
+          echo "📦 Exporting IPA..."
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export || true
+                     -exportPath build/export
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
