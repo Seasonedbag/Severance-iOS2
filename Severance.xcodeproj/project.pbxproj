@@ -1,160 +1,40 @@
-// !@$*UTF8*$@!
+/* !$*UTF8*$! */
 {
   archiveVersion = 1;
-  classes = {
-  };
+  classes = {};
   objectVersion = 60;
   objects = {
+    /* Files */
+    A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
+    A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
+    A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
+    A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+    A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+    A6 /* www */ = {isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
 
-/* Begin PBXBuildFile section */
-    1D6058900D05DD3D006BFB54 /* AppDelegate.swift in Sources */ = { isa = PBXBuildFile; fileRef = 1D60588F0D05DD3D006BFB54 /* AppDelegate.swift */; };
-/* End PBXBuildFile section */
+    /* Groups */
+    G1 = { isa = PBXGroup; children = (A5,A4,A1,A2,A3,A6); sourceTree = "<group>"; };
 
-/* Begin PBXFileReference section */
-    1D60588F0D05DD3D006BFB54 /* AppDelegate.swift */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-    1D6058A10D05DD3D006BFB54 /* Info.plist */ = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    1D6058B20D05DD3D006BFB54 /* Severance.app */ = { isa = PBXFileReference; explicitFileType = wrapper.application; path = "Severance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+    /* Build files and phases */
+    F1 = { isa = PBXBuildFile; fileRef = A1; };
+    F2 = { isa = PBXBuildFile; fileRef = A2; };
+    F3 = { isa = PBXBuildFile; fileRef = A3; };
 
-/* Begin PBXSourcesBuildPhase section */
-    1D6058910D05DD3D006BFB54 /* Sources */ = {
-      isa = PBXSourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-        1D6058900D05DD3D006BFB54 /* AppDelegate.swift in Sources */,
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-/* End PBXSourcesBuildPhase section */
+    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); buildActionMask = 2147483647; };
+    P2 = { isa = PBXFrameworksBuildPhase; files = (); buildActionMask = 2147483647; };
+    P3 = { isa = PBXResourcesBuildPhase; files = (); buildActionMask = 2147483647; };
 
-/* Begin PBXFrameworksBuildPhase section */
-    1D6058920D05DD3D006BFB54 /* Frameworks */ = {
-      isa = PBXFrameworksBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-/* End PBXFrameworksBuildPhase section */
+    /* Target */
+    T1 = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (P1,P2,P3); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
 
-/* Begin PBXResourcesBuildPhase section */
-    1D6058930D05DD3D006BFB54 /* Resources */ = {
-      isa = PBXResourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-/* End PBXResourcesBuildPhase section */
+    /* Configs */
+    C1 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; }; };
+    C2 = { isa = XCBuildConfiguration; name = Release; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; }; };
 
-/* Begin PBXNativeTarget section */
-    1D6058940D05DD3D006BFB54 /* Severance */ = {
-      isa = PBXNativeTarget;
-      buildConfigurationList = 1D6058960D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "Severance" */;
-      buildPhases = (
-        1D6058910D05DD3D006BFB54 /* Sources */,
-        1D6058920D05DD3D006BFB54 /* Frameworks */,
-        1D6058930D05DD3D006BFB54 /* Resources */,
-      );
-      buildRules = (
-      );
-      dependencies = (
-      );
-      name = Severance;
-      productName = Severance;
-      productReference = 1D6058B20D05DD3D006BFB54 /* Severance.app */;
-      productType = "com.apple.product-type.application";
-    };
-/* End PBXNativeTarget section */
+    400 = { isa = XCConfigurationList; buildConfigurations = (C1,C2); defaultConfigurationName = Release; };
 
-/* Begin PBXProject section */
-    1D6058970D05DD3D006BFB54 /* Project object */ = {
-      isa = PBXProject;
-      attributes = {
-        LAST_SYSTEM_COREDATA_MIGRATION = 1401;
-        LastUpgradeCheck = 1600;
-        ORGANIZATIONNAME = "YourOrganization";
-      };
-      buildConfigurationList = 1D6058980D05DD3D006BFB54 /* Build configuration list for PBXProject "Severance" */;
-      compatibilityVersion = "Xcode 14.0";
-      developmentRegion = en;
-      hasScannedForEncodings = 0;
-      knownRegions = (
-        en,
-        Base,
-      );
-      mainGroup = 1D6058990D05DD3D006BFB54;
-      productRefGroup = 1D60589A0D05DD3D006BFB54 /* Products */;
-      projectDirPath = "";
-      projectRoot = "";
-    };
-/* End PBXProject section */
-
-/* Begin PBXGroup section */
-    1D6058990D05DD3D006BFB54 = {
-      isa = PBXGroup;
-      children = (
-        1D60588F0D05DD3D006BFB54 /* AppDelegate.swift */,
-        1D6058A10D05DD3D006BFB54 /* Info.plist */,
-      );
-      sourceTree = "<group>";
-    };
-    1D60589A0D05DD3D006BFB54 /* Products */ = {
-      isa = PBXGroup;
-      children = (
-        1D6058B20D05DD3D006BFB54 /* Severance.app */,
-      );
-      name = Products;
-      sourceTree = "<group>";
-    };
-/* End PBXGroup section */
-
-/* Begin XCBuildConfiguration section */
-    1D60589B0D05DD3D006BFB54 /* Debug */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        DEVELOPMENT_TEAM = "";
-        INFOPLIST_FILE = Info.plist;
-        PRODUCT_BUNDLE_IDENTIFIER = com.kevin.Severance;
-        PRODUCT_NAME = "Severance";
-        SDKROOT = iphoneos;
-      };
-      name = Debug;
-    };
-    1D60589C0D05DD3D006BFB54 /* Release */ = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        DEVELOPMENT_TEAM = "";
-        INFOPLIST_FILE = Info.plist;
-        PRODUCT_BUNDLE_IDENTIFIER = com.kevin.Severance;
-        PRODUCT_NAME = "Severance";
-        SDKROOT = iphoneos;
-      };
-      name = Release;
-    };
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-    1D6058960D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "Severance" */ = {
-      isa = XCConfigurationList;
-      buildConfigurations = (
-        1D60589B0D05DD3D006BFB54 /* Debug */,
-        1D60589C0D05DD3D006BFB54 /* Release */,
-      );
-      defaultConfigurationIsVisible = 0;
-      defaultConfigurationName = Release;
-    };
-    1D6058980D05DD3D006BFB54 /* Build configuration list for PBXProject "Severance" */ = {
-      isa = XCConfigurationList;
-      buildConfigurations = (
-        1D60589B0D05DD3D006BFB54 /* Debug */,
-        1D60589C0D05DD3D006BFB54 /* Release */,
-      );
-      defaultConfigurationIsVisible = 0;
-      defaultConfigurationName = Release;
-    };
-/* End XCConfigurationList section */
-
+    /* Project */
+    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; developmentRegion = en; projectDirPath = ""; projectRoot = ""; };
   };
-  rootObject = 1D6058970D05DD3D006BFB54 /* Project object */;
+  rootObject = 500;
 }
