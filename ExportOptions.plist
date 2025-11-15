@@ -2,38 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>method</key>
-	<string>release-testing</string>
+    <key>method</key>
+    <string>release-testing</string>
 
-	<key>destination</key>
-	<string>export</string>
+    <key>signingStyle</key>
+    <string>manual</string>
 
-	<key>signingStyle</key>
-	<string>manual</string>
+    <key>signingRequired</key>
+    <false/>
 
-	<key>signingCertificate</key>
-	<string></string>
+    <key>compileBitcode</key>
+    <false/>
 
-	<key>provisioningProfiles</key>
-	<dict/>
+    <key>destination</key>
+    <string>export</string>
 
-	<key>compileBitcode</key>
-	<false/>
+    <key>stripSwiftSymbols</key>
+    <true/>
 
-	<key>stripSwiftSymbols</key>
-	<true/>
+    <key>provisioningProfiles</key>
+    <dict/>
 
-	<key>manageAppVersionAndBuildNumber</key>
-	<false/>
-
-	<!-- IMPORTANT -->
-	<key>embedOnDemandResourcesAssetPacksInBundle</key>
-	<false/>
-
-	<!-- Tell Xcode we are exporting an UNSIGNED IPA -->
-	<key>signingRequired</key>
-	<false/>
-	<key>thinning</key>
-	<string>&lt;none&gt;</string>
+    <key>manageAppVersionAndBuildNumber</key>
+    <false/>
 </dict>
 </plist>
