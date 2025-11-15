@@ -26,17 +26,34 @@ jobs:
                      CODE_SIGNING_ALLOWED=NO \
                      CODE_SIGN_STYLE=Manual
 
-      - name: Export .ipa (unsigned)
+      - name: Export .ipa
         run: |
           echo "📦 Exporting IPA..."
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export \
-                     CODE_SIGNING_ALLOWED=NO || true
+                     -exportPath build/export || true
+
+      # -----------------------------
+      # 🔍 DEBUG STEPS (added here)
+      # -----------------------------
+
+      - name: List archive contents
+        run: |
+          echo "📦 Checking archive content..."
+          ls -R build/Severance.xcarchive || true
+
+      - name: List export folder
+        run: |
+          echo "📦 Checking export directory..."
+          ls -R build/export || true
+
+      # -----------------------------
+      # End Debug
+      # -----------------------------
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: severance-ipa
-          path: build/export
+          path: build/export || true
