@@ -34,19 +34,20 @@ jobs:
       - name: Export IPA
         run: |
           echo "📦 Exporting IPA..."
-          mkdir -p build/export
+          mkdir -p build/output
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export
+                     -exportPath build/output \
+                     CODE_SIGNING_ALLOWED=NO
 
       - name: List export output
         run: |
           echo "📂 Export directory:"
-          ls -R build/export
+          ls -R build/output
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: severance-ipa
-          path: build/export/*.ipa
+          path: build/output/*.ipa
