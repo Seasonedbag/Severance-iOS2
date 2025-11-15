@@ -12,9 +12,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clean DerivedData
-        run: rm -rf ~/Library/Developer/Xcode/DerivedData/*
+        run: |
+          echo "🧹 Cleaning DerivedData..."
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Build Severance app (archive only)
+      - name: Build Severance app (archive)
         run: |
           echo "📦 Building app..."
           xcodebuild -project Severance.xcodeproj \
@@ -32,28 +34,10 @@ jobs:
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export || true
-
-      # -----------------------------
-      # 🔍 DEBUG STEPS (added here)
-      # -----------------------------
-
-      - name: List archive contents
-        run: |
-          echo "📦 Checking archive content..."
-          ls -R build/Severance.xcarchive || true
-
-      - name: List export folder
-        run: |
-          echo "📦 Checking export directory..."
-          ls -R build/export || true
-
-      # -----------------------------
-      # End Debug
-      # -----------------------------
+                     -exportPath build/export
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: severance-ipa
-          path: build/export || true
+          path: build/export
