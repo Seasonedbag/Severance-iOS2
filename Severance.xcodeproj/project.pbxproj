@@ -1,42 +1,78 @@
 /* !$*UTF8*$! */
 {
   archiveVersion = 1;
-  classes = {
-  };
-  objectVersion = 151;
+  classes = {};
+  objectVersion = 60;
   objects = {
 
-    /* Files */
-    A1 = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
-    A2 = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
-    A3 = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
-    A4 = {isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
-    A5 = {isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
-    A6 = {isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
+/* Begin file references */
+    /* Source files */
+    A1 /* AppDelegate.swift */ = { isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
+    A2 /* SceneDelegate.swift */ = { isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
+    A3 /* ViewController.swift */ = { isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
+    A4 /* Info.plist */ = { isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+    A5 /* Assets.xcassets */ = { isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+    A6 /* www (folder) */ = { isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
 
-    /* Groups */
-    G1 = { isa = PBXGroup; children = (A5,A4,A1,A2,A3,A6); sourceTree = "<group>"; };
+    /* Product (the app) */
+    PROD = { isa = PBXFileReference; lastKnownFileType = "wrapper.application"; name = "Severance.app"; path = "Severance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 
-    /* Build files and phases */
-    F1 = { isa = PBXBuildFile; fileRef = A1; };
-    F2 = { isa = PBXBuildFile; fileRef = A2; };
-    F3 = { isa = PBXBuildFile; fileRef = A3; };
+/* Groups (project navigator) */
+    /* Main group that holds top-level files/folders */
+    G_MAIN = { isa = PBXGroup; children = (A5, A4, A1, A2, A3, A6); sourceTree = "<group>"; name = "Severance"; };
 
-    P1 = { isa = PBXSourcesBuildPhase; files = (F1,F2,F3); buildActionMask = 2147483647; };
-    P2 = { isa = PBXFrameworksBuildPhase; files = (); buildActionMask = 2147483647; };
-    P3 = { isa = PBXResourcesBuildPhase; files = (); buildActionMask = 2147483647; };
+/* Build files */
+    BF_AppDelegate = { isa = PBXBuildFile; fileRef = A1; };
+    BF_SceneDelegate = { isa = PBXBuildFile; fileRef = A2; };
+    BF_ViewController = { isa = PBXBuildFile; fileRef = A3; };
 
-    /* Target */
-    T1 = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (P1,P2,P3); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
+/* Build phases */
+    PH_Sources = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (BF_AppDelegate, BF_SceneDelegate, BF_ViewController); };
+    PH_Frameworks = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); };
+    /* Resources: includes Assets.xcassets and the entire www folder */
+    BF_Assets = { isa = PBXBuildFile; fileRef = A5; };
+    BF_www = { isa = PBXBuildFile; fileRef = A6; };
+    PH_Resources = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (BF_Assets, BF_www); };
 
-    /* Configs */
-    C1 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; ALWAYS_SEARCH_USER_PATHS = "NO"; }; };
-    C2 = { isa = XCBuildConfiguration; name = Release; buildSettings = { INFOPLIST_FILE = "Info.plist"; PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; SDKROOT = "iphoneos"; SWIFT_VERSION = "5.0"; ALWAYS_SEARCH_USER_PATHS = "NO"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; };
+/* Build configurations */
+    /* Debug */
+    CFG_Debug = { isa = XCBuildConfiguration; name = Debug; buildSettings = {
+        PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance";
+        INFOPLIST_FILE = "Info.plist";
+        SWIFT_VERSION = "5.0";
+        SDKROOT = "iphoneos";
+    }; };
 
-    400 = { isa = XCConfigurationList; buildConfigurations = (C1,C2); defaultConfigurationName = Release; };
+    /* Release */
+    CFG_Release = { isa = XCBuildConfiguration; name = Release; buildSettings = {
+        PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance";
+        INFOPLIST_FILE = "Info.plist";
+        SWIFT_VERSION = "5.0";
+        SDKROOT = "iphoneos";
+    }; };
 
-    /* Project */
-    500 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1604; }; buildConfigurationList = 400; compatibilityVersion = "Xcode 14.0"; mainGroup = G1; developmentRegion = en; projectDirPath = ""; projectRoot = ""; };
+    CFG_LIST = { isa = XCConfigurationList; buildConfigurations = (CFG_Debug, CFG_Release); defaultConfigurationName = Release; };
+
+/* Product and target */
+    TARGET = { isa = PBXNativeTarget; name = "Severance"; productName = "Severance"; productReference = PROD; productType = "com.apple.product-type.application"; buildConfigurationList = CFG_LIST; buildPhases = (PH_Sources, PH_Frameworks, PH_Resources); };
+
+/* Project */
+    PROJECT = {
+      isa = PBXProject;
+      attributes = {
+        LastUpgradeCheck = 1600;
+        ORGANIZATIONNAME = "Seasonedbag";
+      };
+      buildConfigurationList = CFG_LIST;
+      compatibilityVersion = "Xcode 14.0";
+      developmentRegion = en;
+      mainGroup = G_MAIN;
+      projectDirPath = "";
+      projectRoot = "";
+      targets = (TARGET);
+    };
+
+/* end objects */
   };
-  rootObject = 500;
+  rootObject = PROJECT;
 }
