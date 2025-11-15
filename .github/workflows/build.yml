@@ -6,7 +6,6 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,7 +15,7 @@ jobs:
           echo "🧹 Cleaning DerivedData..."
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Build Severance app (archive)
+      - name: Build (archive)
         run: |
           echo "📦 Building app..."
           xcodebuild -project Severance.xcodeproj \
@@ -28,15 +27,27 @@ jobs:
                      CODE_SIGNING_ALLOWED=NO \
                      CODE_SIGN_STYLE=Manual
 
-      - name: Export .ipa
+      - name: List archive contents (DEBUG)
+        run: |
+          echo "📂 Archive listing:"
+          ls -R build/Severance.xcarchive || true
+
+      - name: Export .ipa (unsigned) (may produce nothing if signing missing)
         run: |
           echo "📦 Exporting IPA..."
           xcodebuild -exportArchive \
                      -archivePath build/Severance.xcarchive \
                      -exportOptionsPlist ExportOptions.plist \
-                     -exportPath build/export
+                     -exportPath build/export \
+                     CODE_SIGNING_ALLOWED=NO || true
 
-      - name: Upload IPA artifact
+      - name: Upload .xcarchive
+        uses: actions/upload-artifact@v4
+        with:
+          name: severance-xcarchive
+          path: build/Severance.xcarchive
+
+      - name: Upload IPA artifact (if any)
         uses: actions/upload-artifact@v4
         with:
           name: severance-ipa
