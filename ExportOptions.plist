@@ -15,12 +15,6 @@
     <true/>
 
     <key>provisioningProfiles</key>
-    <dict></dict>
-
-    <key>teamID</key>
-    <string></string>
-
-    <key>signingCertificate</key>
-    <string></string>
+    <dict/>
 </dict>
 </plist>
