@@ -11,9 +11,6 @@
     <key>signingRequired</key>
     <false/>
 
-    <key>teamID</key>
-    <string></string>
-
     <key>provisioningProfiles</key>
     <dict/>
 
